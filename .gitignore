@@ -1,0 +1,53 @@
+# =============================================================================
+# CareerAI - .gitignore
+# =============================================================================
+
+# ---- Secrets & local configuration (NEVER commit) ---------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# ---- Database & user data (contains real users / personal data) -------------
+# A fresh database is created automatically on first run.
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+backend/uploads/*/*
+!backend/uploads/*/.gitkeep
+
+# ---- Python -----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+backend/venv/
+venv/
+.venv/
+
+# ---- Local AI models (large GGUF files) -------------------------------------
+backend/models/
+*.gguf
+
+# ---- Node / React -----------------------------------------------------------
+node_modules/
+frontend/build/
+frontend/coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---- Editors & OS -----------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Clean-up archive & generated files -------------------------------------
+_removed/
+_run_*.bat
